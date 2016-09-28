@@ -9,6 +9,8 @@
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
 
+/meteor.output
+/meteor.pid
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
@@ -34,6 +36,7 @@
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+/npm-debug.log
 
 # JIRA plugin
 atlassian-ide-plugin.xml

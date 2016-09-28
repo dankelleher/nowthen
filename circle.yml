@@ -8,3 +8,8 @@ dependencies:
 checkout:
   post:
     - git submodule update --init
+test:
+  override:
+    - npm test
+    - npm start
+    - npm run-script acceptance-test
