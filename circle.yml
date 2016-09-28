@@ -12,5 +12,5 @@ test:
   override:
     - npm test
     - npm start:
-      background: true
+        background: true
     - npm run-script acceptance-test
