@@ -1,12 +1,12 @@
-var _ = require('underscore');
+const _ = require('underscore');
 
 function Page() {
   this.url = '';
 }
 
 Page.prototype.open = function (parameters, ignoreVerify) {
-  var parameterString = _.isEmpty(parameters) ? '' : '/' + parameters;
-  browser.url(process.env.ROOT_URL + '/' + this.url + parameterString);
+  const parameterString = _.isEmpty(parameters) ? '' : `/${parameters}`;
+  browser.url(`${process.env.ROOT_URL}/${this.url}${parameterString}`);
 
   // Verify the page was opened
   // we can ignore this verification step in case opening this page
@@ -32,15 +32,15 @@ Page.prototype.transitionedTo = function (newPage, customTimeout) {
 
   try {
     return browser.waitUntil(() => {
-        //console.log('Actual:', browser.getUrl(), 'Expected:', newPage.url, 'timeout', timeout);
+        // console.log('Actual:', browser.getUrl(), 'Expected:', newPage.url, 'timeout', timeout);
 
-        if (newPage.url === '') {
+      if (newPage.url === '') {
           // expect an url ending with a slash (e.g. http://localhost:3000/)
-          return browser.getUrl().match(/\/$/);
-        }
+        return browser.getUrl().match(/\/$/);
+      }
 
-        return browser.getUrl().indexOf(newPage.url) >= 0;
-      },
+      return browser.getUrl().indexOf(newPage.url) >= 0;
+    },
       timeout,
       errorMessage,
       checkInterval
@@ -50,7 +50,7 @@ Page.prototype.transitionedTo = function (newPage, customTimeout) {
     // and the url is actually correct, check it again here
     if (browser.getUrl().indexOf(newPage.url) < 0) {
       console.log(error.message);
-      throw new Error(errorMessage + ' ' + postCatchErrorMsg());
+      throw new Error(`${errorMessage} ${postCatchErrorMsg()}`);
     }
   }
 };

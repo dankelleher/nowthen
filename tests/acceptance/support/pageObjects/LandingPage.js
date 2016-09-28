@@ -1,7 +1,7 @@
-var Page = require('./Page');
+const Page = require('./Page');
 
-var LandingPage = Object.create(Page, {
-  title: { get: function () { return browser.element('.js-title'); }},
+const LandingPage = Object.create(Page, {
+  title: { get() { return browser.element('.js-title'); } },
 });
 
 module.exports = LandingPage;

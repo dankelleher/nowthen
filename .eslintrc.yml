@@ -1,0 +1,20 @@
+---
+  parser: babel-eslint
+  parserOptions:
+    allowImportExportEverywhere: true
+  plugins:
+    - meteor
+  extends:
+    - airbnb
+    - plugin:meteor/recommended
+  settings:
+    import/resolver: meteor
+  rules:
+    import/no-extraneous-dependencies: 0
+    import/extensions: 0
+  env:
+    browser: true
+    node: true
+    meteor: true
+    mongo: true
+    mocha: true
