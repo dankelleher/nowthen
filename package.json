@@ -6,7 +6,7 @@
     "poststart": "scripts/check_server_running.sh",
     "stop": "scripts/stop_server.sh",
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --port 3001",
-    "acceptance-test": "scripts/run_acceptance_tests.sh"
+    "acceptance-test": "scripts/check_server_running.sh && scripts/run_acceptance_tests.sh"
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"

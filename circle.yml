@@ -11,5 +11,6 @@ checkout:
 test:
   override:
     - npm test
-    - npm start
+    - npm start:
+      background: true
     - npm run-script acceptance-test
