@@ -2,7 +2,8 @@
   "name": "hello",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --port 3001"
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
